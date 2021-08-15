@@ -17,6 +17,11 @@ class ActionsItemQueryBloc extends BaseBloc {
     addResultToController(_controller, results);
   }
 
+  void loadActions(int page_number, int items_count) async {
+    final results = await _client.fetchActions(page_number, items_count);
+    addResultToController(_controller, results);
+  }
+
   @override
   void dispose() {
     _controller.close();

@@ -51,4 +51,9 @@ class MallApiProvider {
   Future<RootResponse> fetchActionInfo(int id) {
     return _baseGETfetchWithEvent(RootTypes.EVENT_ACTION_ITEM, "promo?id=$id");
   }
+
+  Future<RootResponse> fetchActions(int page_number, int items_count) {
+    return _baseGETfetchWithEvent(RootTypes.EVENT_ACTION_ITEM,
+        "promos?page=$page_number&count=$items_count");
+  }
 }
